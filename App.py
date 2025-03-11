@@ -26,13 +26,14 @@ app.layout = html.Div([
                 clearable=False
             ),
             dcc.Graph(id='comparison-graph'),
-        ], style={'width': '90%', 'textAlign': 'top', 'marginTop': '50px', 'border': '2px solid black', 'padding': '20px'}),
+        ], style={'width': '90%', 'textAlign': 'center', 'marginTop': '50px', 'border': '2px solid black', 'padding': '20px'}),
+        
         
     ]),
     
     html.Div([
-        html.H2("📈 Year-wise Monthly Comparison"),
-        html.Label("⚙️ Select Technical Parameter for Year-wise Monthly Comparison"),
+        html.H2("📈 Year-wise Comparison"),
+        html.Label("⚙️ Select Technical Parameter for Year-wise Comparison"),
         dcc.Dropdown(
             id='yearwise-parameter-dropdown',
             options=[{'label': param, 'value': param} for param in df["Technical Parameters"]],
@@ -40,7 +41,7 @@ app.layout = html.Div([
             clearable=False
         ),
         dcc.Graph(id='yearwise-line-graph'),
-    ], style={'width': '90%', 'textAlign': 'center', 'marginTop': '50px', 'border': '2px solid black', 'padding': '20px'}),
+    ], style={'width': '100%', 'textAlign': 'center', 'marginTop': '50px', 'border': '2px solid black', 'padding': '20px'}),
     
     html.Div([
         html.H2("🔩 Mechanical Life Estimation"),
@@ -62,10 +63,10 @@ app.layout = html.Div([
             
             html.Label("Ans:"),
             html.Div(id='life-estimation-output', style={'border': '1px solid black', 'padding': '10px', 'marginTop': '10px', 'fontSize': '18px'})
-        ], style={'border': '2px solid black', 'padding': '20px', 'width': '90%', 'margin': 'auto', 'textAlign': 'center'})
-    ], style={'width': '90%', 'textAlign': 'center', 'marginTop': '50px'})
+        ], style={'border': '2px solid black', 'padding': '20px', 'width': '75%', 'margin': 'auto', 'textAlign': 'left'})
+    ], style={'width': '100%', 'textAlign': 'center', 'marginTop': '50px'})
 ])
-server = app.server  # Expose Flask server instance for Gunicorn
+
 # Callbacks for interactivity
 @app.callback(
     Output('comparison-graph', 'figure'),
@@ -145,7 +146,7 @@ def estimate_life(n_clicks, usage_hours, total_stress_cycles, operating_temp):
         
         component = "Bearings and Rotating Components" if total_stress_cycles > 500000 else "Boiler Tubes and Heat Exchangers"
         
-        return f"🔍 Estimated Remaining Life: {years} years, {months} months, {days} days.\nLikely first wear-out component: {component}"
+        return f"🔍 Estimated Remaining Life: {years} years, {months} months, {days} days. \nLikely first wear-out component: {component}"
     return ""
 
 if __name__ == '__main__':import dash
@@ -176,8 +177,7 @@ app.layout = html.Div([
                 clearable=False
             ),
             dcc.Graph(id='comparison-graph'),
-        ], style={'width': '90%', 'textAlign': 'top', 'marginTop': '50px', 'border': '2px solid black', 'padding': '20px'}),
-        
+        ], style={'width': '100%', 'textAlign': 'center', 'marginTop': '50px', 'border': '2px solid black', 'padding': '20px'}),
         
     ]),
     
@@ -191,7 +191,7 @@ app.layout = html.Div([
             clearable=False
         ),
         dcc.Graph(id='yearwise-line-graph'),
-    ], style={'width': '90%', 'textAlign': 'center', 'marginTop': '50px', 'border': '2px solid black', 'padding': '20px'}),
+    ], style={'width': '100%', 'textAlign': 'center', 'marginTop': '50px', 'border': '2px solid black', 'padding': '20px'}),
     
     html.Div([
         html.H2("🔩 Mechanical Life Estimation"),
@@ -208,7 +208,7 @@ app.layout = html.Div([
             html.Button("Calculate Life", id='calculate-button', n_clicks=0, style={'marginTop': '10px', 'width': '100%'}),
             
             html.Div(id='life-estimation-output', style={'marginTop': '20px', 'fontSize': '18px', 'width': '100%'})
-        ], style={'width': '60%', 'display': 'line-block', 'verticalAlign': 'top', 'textAlign': 'left'})
+        ], style={'width': '75%', 'display': 'inline-block', 'verticalAlign': 'top', 'textAlign': 'right'})
     ]),
 ])
 

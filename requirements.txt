@@ -2,5 +2,5 @@ dash
 pandas
 plotly
 numpy
-gunicorn
 openpyxl
+gunicorn
