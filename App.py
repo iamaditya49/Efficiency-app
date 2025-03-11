@@ -69,7 +69,7 @@ app.layout = html.Div([
         ], style={'border': '2px solid black', 'padding': '20px', 'width': '40%', 'margin': 'auto', 'textAlign': 'left'})
     ], style={'width': '100%', 'textAlign': 'center', 'marginTop': '50px'})
 ])
-
+server = app.server  # Expose Flask server instance for Gunicorn
 # Callbacks for interactivity
 @app.callback(
     Output('comparison-graph', 'figure'),
