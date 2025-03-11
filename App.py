@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 import numpy as np
 
 # Load the comparison data from the Excel file
-df = pd.read_excel("Technical_Comparison_2013_2023.xlsx", sheet_name="Sheet1")
+df = pd.read_excel(r"C:\Users\adity\Downloads\Major Project\Efficiency-app\Technical_Comparison_2013_2023.xlsx", sheet_name="Sheet1")
 
 # Dash App Initialization
 app = dash.Dash(__name__)
@@ -32,8 +32,8 @@ app.layout = html.Div([
     ]),
     
     html.Div([
-        html.H2("📈 Year-wise Comparison"),
-        html.Label("⚙️ Select Technical Parameter for Year-wise Comparison"),
+        html.H2("📈 Yearly Month-wise Comparison"),
+        html.Label("⚙️ Select Technical Parameter for Yearly Month-wise Comparison"),
         dcc.Dropdown(
             id='yearwise-parameter-dropdown',
             options=[{'label': param, 'value': param} for param in df["Technical Parameters"]],
@@ -157,7 +157,7 @@ import plotly.graph_objects as go
 import numpy as np
 
 # Load the comparison data from the Excel file
-df = pd.read_excel("Technical_Comparison_2013_2023.xlsx", sheet_name="Sheet1")
+df = pd.read_excel(r"C:\Users\adity\Downloads\Major Project\Efficiency-app\Technical_Comparison_2013_2023.xlsx", sheet_name="Sheet1")
 
 # Dash App Initialization
 app = dash.Dash(__name__)
@@ -177,13 +177,13 @@ app.layout = html.Div([
                 clearable=False
             ),
             dcc.Graph(id='comparison-graph'),
-        ], style={'width': '100%', 'textAlign': 'center', 'marginTop': '50px', 'border': '2px solid black', 'padding': '20px'}),
+        ], style={'width': '90%', 'textAlign': 'center', 'marginTop': '50px', 'border': '2px solid black', 'padding': '20px'}),
         
     ]),
     
     html.Div([
-        html.H2("📈 Year-wise Comparison"),
-        html.Label("⚙️ Select Technical Parameter for Year-wise Comparison"),
+        html.H2("📈 Yearly Month-wise Comparison"),
+        html.Label("⚙️ Select Technical Parameter for Yearly Month-wise Comparison"),
         dcc.Dropdown(
             id='yearwise-parameter-dropdown',
             options=[{'label': param, 'value': param} for param in df["Technical Parameters"]],
