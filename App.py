@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 import numpy as np
 
 # Load the comparison data from the Excel file
-df = pd.read_excel(r"C:\Users\adity\Downloads\Major Project\Efficiency-app\Technical_Comparison_2013_2023.xlsx", sheet_name="Sheet1")
+df = pd.read_excel("Technical_Comparison_2013_2023.xlsx", sheet_name="Sheet1")
 
 # Dash App Initialization
 app = dash.Dash(__name__)
@@ -157,7 +157,7 @@ import plotly.graph_objects as go
 import numpy as np
 
 # Load the comparison data from the Excel file
-df = pd.read_excel(r"C:\Users\adity\Downloads\Major Project\Efficiency-app\Technical_Comparison_2013_2023.xlsx", sheet_name="Sheet1")
+df = pd.read_excel("Technical_Comparison_2013_2023.xlsx", sheet_name="Sheet1")
 
 # Dash App Initialization
 app = dash.Dash(__name__)
